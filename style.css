@@ -1,4 +1,191 @@
-/* Custom Row Binding Management & Row Deletes */
+/* ==========================================================================
+   1. BASE THEMES & RESETS
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121214;
+    color: #e1e1e6;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 2.2rem;
+    color: #00e676;
+}
+
+/* ==========================================================================
+   2. CONTROL LAYOUT COMPONENTS & SECTIONS
+   ========================================================================== */
+.search-section {
+    margin-bottom: 16px;
+}
+
+#searchBar, .add-game-box input {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #202024;
+    border: 2px solid #29292e;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#searchBar:focus, .add-game-box input:focus {
+    border-color: #00e676;
+}
+
+.game-management {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.add-game-box {
+    display: flex;
+    gap: 8px;
+    flex: 1;
+    min-width: 280px;
+}
+
+/* ==========================================================================
+   3. MANAGEMENT BUTTON STYLINGS
+   ========================================================================== */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s, transform 0.1s;
+    white-space: nowrap;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-add {
+    background-color: #00e676;
+    color: #121214;
+}
+
+.btn-add:hover {
+    background-color: #00c853;
+}
+
+.btn-delete {
+    background-color: #ff5252;
+    color: #fff;
+}
+
+.btn-delete:hover {
+    background-color: #e04040;
+}
+
+/* ==========================================================================
+   4. NAVIGATION TABS FOR ACTIVE PROFILES
+   ========================================================================== */
+.tabs-container {
+    display: flex;
+    gap: 8px;
+    border-bottom: 2px solid #29292e;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    color: #a8a8b3;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.tab-button:hover {
+    background-color: #202024;
+    color: #fff;
+}
+
+.tab-button.active {
+    background-color: #29292e;
+    color: #00e676;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   5. DATA TRACKING TABLES
+   ========================================================================== */
+.table-container {
+    background-color: #121214;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #29292e;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 14px 16px;
+}
+
+th {
+    background-color: #202024;
+    color: #8d8d99;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #29292e;
+}
+
+tr {
+    border-bottom: 1px solid #29292e;
+}
+
+tr:last-child {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #202024;
+}
+
+td:nth-child(2) {
+    font-family: 'Courier New', Courier, monospace;
+    color: #00e676;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   6. ROW ITEM BINDING CONTROLS & TRASH ICONS
+   ========================================================================== */
 .binding-management {
     display: flex;
     gap: 8px;
@@ -37,4 +224,23 @@
 
 .btn-row-delete:hover {
     background-color: rgba(255, 82, 82, 0.1);
+}
+
+/* ==========================================================================
+   7. SIMPLIFIED BOTTOM WATERMARK FOOTER
+   ========================================================================== */
+.bottom-watermark {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid #29292e;
+}
+
+.bottom-watermark span {
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: #29292e; /* Subdued dark gray that sits subtly in the background */
+    text-transform: uppercase;
+    user-select: none; /* Stops users from accidentally highlighting it */
 }
