@@ -3,60 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Gaming Keybindings Dashboard</title>
+    <title>Gamer Keybind Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>🎮 Game Binder</h1>
-        <input type="text" id="searchBar" placeholder="Search controls or categories...">
-        
-        <nav id="gameTabs">
+    <div class="container">
+        <header>
+            <h1>🎮 Gamer Keybind Tracker</h1>
+        </header>
+
+        <!-- Search Bar Section -->
+        <section class="search-section">
+            <input type="text" id="searchBar" placeholder="Search by action or category (e.g., jump, movement)...">
+        </section>
+
+        <!-- Game Profile Management -->
+        <section class="game-management">
+            <div class="add-game-box">
+                <input type="text" id="newGameInput" placeholder="Enter new game name...">
+                <button id="addGameBtn" class="btn btn-add">Add Game</button>
+            </div>
+            <button id="deleteGameBtn" class="btn btn-delete">Delete Active Game</button>
+        </section>
+
+        <!-- Dynamic Game Tabs -->
+        <nav id="gameTabs" class="tabs-container">
             <!-- Tabs injected by JS -->
         </nav>
 
-        <!-- Manage Games Section -->
-        <div class="management-bar">
-            <input type="text" id="newGameInput" placeholder="New Game Name...">
-            <button id="addGameBtn" class="action-btn">➕ Add Game</button>
-            <button id="deleteGameBtn" class="action-btn danger">🗑️ Delete Current Game</button>
-        </div>
-    </header>
-
-    <main class="container">
-        <!-- Form to Add / Edit a Binding -->
-        <section class="form-container">
-            <h3 id="formTitle">Add New Binding</h3>
-            <form id="bindingForm">
-                <input type="hidden" id="editIndex" value="">
-                <input type="text" id="actionInput" placeholder="Action (e.g., Jump)" required>
-                <input type="text" id="keyInput" placeholder="Key (e.g., SPACE)" required>
-                <input type="text" id="categoryInput" placeholder="Category (e.g., Movement)" required>
-                <button type="submit" id="submitBindingBtn" class="action-btn">Save Binding</button>
-                <button type="button" id="cancelEditBtn" class="action-btn secondary" style="display:none;">Cancel Edit</button>
-            </form>
+        <!-- NEW: Add Keybind Inputs Row -->
+        <section class="binding-management">
+            <input type="text" id="newActionInput" placeholder="Action (e.g. Crouch)">
+            <input type="text" id="newKeyInput" placeholder="Keybind (e.g. Shift)">
+            <input type="text" id="newCategoryInput" placeholder="Category (e.g. Movement)">
+            <button id="addBindingBtn" class="btn btn-add">Add Keybind</button>
         </section>
 
-        <!-- Table displaying current bindings -->
-        <table id="bindingsTable">
-            <thead>
-                <tr>
-                    <th>Action</th>
-                    <th>Key Binding</th>
-                    <th>Category</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="bindingsBody">
-                <!-- Injected by JS -->
-            </tbody>
-        </table>
-    </main>
+        <!-- Keybinds Table Visual -->
+        <main class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>Keybind</th>
+                        <th>Category</th>
+                        <th style="width: 80px; text-align: center;">Manage</th>
+                    </tr>
+                </thead>
+                <tbody id="bindingsBody">
+                    <!-- Keybind rows injected by JS -->
+                </tbody>
+            </table>
+        </main>
+    </div>
 
     <script src="app.js"></script>
-
-    <footer>
-        <p>&copy; 2026 Game Binder. Built by Ken Smith KSG</p>
-    </footer>
 </body>
 </html>

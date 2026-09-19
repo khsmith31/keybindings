@@ -1,151 +1,40 @@
-:root {
-    --bg-color: #121214;
-    --card-color: #1a1a1e;
-    --accent-color: #7289da;
-    --text-color: #ffffff;
-    --text-muted: #aaaaaa;
-}
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 20px;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-#searchBar {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #333;
-    background: #252529;
-    color: white;
-    margin-bottom: 20px;
-}  
-
-.tab-btn {
-    background: #252529;
-    color: var(--text-muted);
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-weight: bold;
-}
-
-.tab-btn.active, tab-btn:hover {
-    background: var(--accent-color);
-    color: white;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--card-color);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-th, td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #2a2a30;
-}
-
-th {
-    background: #252529;
-    color: var(--accent-color);
-}
-
-kbd {
-    background-color: #333;
-    border: 1px solid #555;
-    border-radius: 4px;
-    padding: 2px 6px;
-    font-family: monospace;
-    box-shadow: 0 2px 0 #111;
-}
-
-.management-bar, .form-container {
-    background: var(--card-color);
-    padding: 15px;
-    border-radius: 6px;
-    margin-bottom: 20px;
+/* Custom Row Binding Management & Row Deletes */
+.binding-management {
     display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    background-color: #202024;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #29292e;
 }
 
-.form-container {
-    flex-direction: column;
-    align-items: stretch;
-}
-
-#bindingForm {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-#bindingForm input {
+.binding-management input {
     flex: 1;
-    min-width: 150px;
-    padding: 10px;
-    background: #252529;
-    border: 1px solid #333;
-    color: white;
+    padding: 8px 12px;
+    background-color: #121214;
+    border: 1px solid #29292e;
     border-radius: 4px;
+    color: #fff;
+    font-size: 0.9rem;
+    outline: none;
 }
 
-.action-btn {
-    background: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
+.binding-management input:focus {
+    border-color: #00e676;
 }
 
-.action-btn.danger { background: #df4759; }
-.action-btn.secondary { background: #555; }
-.action-btn:hover { opacity: 0.9; }
-
-.row-actions button {
+.btn-row-delete {
     background: none;
     border: none;
+    color: #ff5252;
     cursor: pointer;
-    font-size: 14px;
-    margin-right: 5px;
+    font-size: 0.9rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
 }
 
-
-
-footer {
-    text-align: center;
-    padding: 30px 0 10px 0;
-    margin-top: 40px;
-}
-
-footer p {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    opacity: 0.5; /* Makes it look like a subtle watermark */
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.btn-row-delete:hover {
+    background-color: rgba(255, 82, 82, 0.1);
 }
